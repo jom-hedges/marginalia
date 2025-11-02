@@ -1,10 +1,5 @@
-# Elysia with Bun runtime
-
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+# Marginalia
+An app that provides feedback. Designed to foster creative thinking for students and academic writing.
 
 ## Development
 To start the development server run:
