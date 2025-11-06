@@ -1,5 +1,5 @@
 # Marginalia
-An app that provides feedback. Designed to foster creative thinking for students and academic writing.
+An app that provides feedback in academic writing. Designed to foster creative thinking for students and academic writing.
 
 ## Development
 To start the development server run:
