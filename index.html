@@ -18,7 +18,14 @@
     const result = document.getElementById('result')
     form.addEventListener('submit', async e => {
       e.preventDefault()
-      const
+      const data = new FormData(form)
+      const res = await fetch('http://localhost:3000/review', {
+        method: 'POST',
+        body: data,
+      })
+      const json = await res.json()
+      result.textContent = json.feedback
     })
+  </script>
 </body> 
 </html>
