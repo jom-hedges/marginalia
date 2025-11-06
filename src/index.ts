@@ -3,7 +3,7 @@ import Elysia from "elysia";
 import OpenAI from "openai";
 
  const client = new OpenAI({
-   apiKey: process.env.OPENAI_API_KEY, // store key in env
+   apiKey: process.env.OPENAI_SECRET_KEY, // store key in env
  })
 
 const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
