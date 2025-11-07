@@ -21,7 +21,7 @@
       const data = new FormData(form)
       const res = await fetch('http://localhost:3000/review', {
         method: 'POST',
-        body: data,
+        body: FormData,
       })
       const json = await res.json()
       result.textContent = json.feedback

@@ -17,7 +17,7 @@ const app = new Elysia()
 
     // call the LLM
     const { choices } = await client.chat.completions.create({
-      model: "gpt-5",
+      model: "gpt-40-mini",
       messages: [
         {
           role: "system",
@@ -37,7 +37,7 @@ const app = new Elysia()
     return { feedback };    
   })
 
-const file = await client.files.create({
+const uploadedPaper = await client.files.create({
   file: fs.createReadStream("assets/cat-cache-test.txt"), // add a file here
   purpose: "user_data"
 })
