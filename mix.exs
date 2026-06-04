@@ -48,9 +48,10 @@ defmodule Marginalia.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
-      {:jason, "~> 1.2"},
+      {:jason, "~> 1.4"},
       {:dns_cluster, "~> 0.1.1"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:req, "~> 0.5.18"}
     ]
   end
 
