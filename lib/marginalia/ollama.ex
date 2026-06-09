@@ -7,8 +7,8 @@ defmodule Marginalia.Ollama do
       messages: messages,
       stream: true,
     }
-    case Req.post("#{@base_url}/api/chat", json:body) do
-      {:ok, %{status, 200, body: %{"message" => %{"content" => content}}}} -> 
+    case Req.post("#{@base_url}/api/chat", json: body) do
+      {:ok, %{status: 200, body: %{"message" => %{"content" => content}}}} -> 
         {:ok, content}
       {:ok, %{status: status, body: body}} -> 
         {:error, "HTTP #{status}: #{inspect(body)}"}
