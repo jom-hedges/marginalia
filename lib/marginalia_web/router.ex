@@ -17,7 +17,7 @@ defmodule MarginaliaWeb.Router do
   scope "/", MarginaliaWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", SubmissionsLive
   end
 
   # Other scopes may use custom stacks.
