@@ -13,13 +13,19 @@ defmodule Marginalia.Ollama.Client do
       stream: true
     }
 
-    case Req.post("#{@base_url}/api/chat", json: body) do
-      {:ok, response} ->
-        {:ok, response}
+    case Req.post(
+      "#{@base_url}/api/chat",
+      json: body,
+      into: fn {:data, chunk}, acc -> 
+        case Marginalia.Ollama.Response.parse_chunk(chunk) do
+          {:ok, token} -> 
+            send(pid, {:token, token})
+          {:error, reason} -> 
+            send(pid, {:error, reason})
+        end
 
-      {:error, reason} ->
-        send(pid, {:error, reason})
-        {:error, reason}
-    end
+        {:cont, acc}
+      end
+    )
   end
 end
