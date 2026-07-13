@@ -12,3 +12,10 @@ Here is the notes from last week, and this week.
 - goal for next session: handle response and streaming in UI
 - goal next session: add non-streaming fallback endpoint
 - blockers: currently some compilation errors surrounding the case statement in Ollama.client
+
+
+## 2026-07-13
+A month long break to focus on Osmanthus.
+I think settling on OWL for a name might be good.
+Like the Online Writing Lab
+This program seems like an updated version of tech in the Writing Center
