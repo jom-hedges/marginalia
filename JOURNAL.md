@@ -33,4 +33,7 @@ Wired up the `Req.post/2` return value instead of dropping it - non-200 statuses
 Goal for next session 
 - confirm the `Req` version and whether `into:` needs an explicit initial accumulator or a bare function - accumulator start value needs verifying before trusting the buffer logic end-to-end
 
+## 2026-07-14
+Blocker: This morning I switched to my laptop. Earlier in the month, I updated to OTP 29, which unknowingly conflicted with my local Elixir toolchain. I aligned Elixir and OTP 29, so `mix phx.server` could run.
+For today's session, I will write contexts for for submissions and assignments schema 
 

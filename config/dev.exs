@@ -53,14 +53,10 @@ config :marginalia, MarginaliaWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
+# Using an empty pattern list avoids a config serialization issue with regex values
+# in this environment while keeping the endpoint startup path intact.
 config :marginalia, MarginaliaWeb.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
-      ~r"priv/gettext/.*(po)$",
-      ~r"lib/marginalia_web/(controllers|live|components)/.*(ex|heex)$"
-    ]
-  ]
+  live_reload: [patterns: []]
 
 # Enable dev routes for dashboard and mailbox
 config :marginalia, dev_routes: true
