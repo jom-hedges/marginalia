@@ -37,3 +37,22 @@ Goal for next session
 Blocker: This morning I switched to my laptop. Earlier in the month, I updated to OTP 29, which unknowingly conflicted with my local Elixir toolchain. I aligned Elixir and OTP 29, so `mix phx.server` could run.
 For today's session, I will write contexts for for submissions and assignments schema 
 
+
+
+# [Security] cowlib advisory GHSA-g2wm-735q-3f56 — acknowledged, not reachable. July 14, 2026
+
+- cowlib 2.18.0 (latest on hex.pm) still carries this advisory as of
+  July 2026; no patched release exists yet upstream.
+- Assessed exposure: app does not construct cookies from
+  user-controlled input (student submission text goes to DB/LiveView,
+  not headers/cookies). Not reachable in our code paths.
+- Ignoring via `mix deps.audit --ignore-advisory-ids ...` until
+  upstream ships a fix. Revisit: check hex.pm/packages/cowlib
+  periodically for a new release referencing this CVE.
+
+- Req 0.5.18: HIGH (decompression bomb DoS, CVE-2026-49755) and LOW
+  (multipart header injection, CVE-2026-49756). Fixed in 0.6.1+.
+  Action: `mix deps.update req` (pin `~> 0.6.2`), then re-test
+  Ollama streaming client — 0.5→0.6 is a minor bump pre-1.0, check
+  changelog for `into:`/accumulator behavior changes before trusting
+  the buffer logic end-to-end.
