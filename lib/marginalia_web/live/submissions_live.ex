@@ -22,7 +22,8 @@ defmodule MarginaliaWeb.SubmissionsLive do
     new_text = socket.assigns.text <> chunk
     {:noreply, assign(socket, text: new_text)}
   end
-
+  
+  # each token arriving from Task
   def handle_info({:token, token}, socket) do
     {:noreply, assign(socket, response: socket.assigns.response <> token)}
   end
